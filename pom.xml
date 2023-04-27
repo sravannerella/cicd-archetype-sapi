@@ -29,6 +29,26 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
+				<plugin>
+		    <groupId>org.mule.tools.maven</groupId>
+		    <artifactId>mule-maven-plugin</artifactId>
+		    <version>${mule.maven.plugin.version}</version>
+		    <extensions>true</extensions>
+		    <configuration>
+            <cloudHubDeployment>
+            <uri>https://anypoint.mulesoft.com</uri>
+            <muleVersion>4.4.0</muleVersion>
+            <username>speriyala2</username>
+            <password>Psmohan@234</password>
+            <environment>Sandbox</environment>
+            <applicationName>cicd-archetype-sapi</applicationName>
+            <businessGroup>c1dccc4a-5976-48bb-a0f4-327848ba097b</businessGroup>
+            <workerType>MICRO</workerType>
+            <workers>1</workers>
+            <objectStoreV2>true</objectStoreV2>
+        </cloudHubDeployment>
+			</configuration>
+		</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
