@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>c1dccc4a-5976-48bb-a0f4-327848ba097b</groupId>
-	<artifactId>openlogix-best-practices</artifactId>
+	<artifactId>cicd-archetype-sapi</artifactId>
 	<version>1.0.1</version>
 	<packaging>mule-application</packaging>
 
