@@ -1,0 +1,8 @@
+api:
+  name: "best practise"
+  version: "v1"
+
+http:
+  host: "localhost"
+  port: "8081"
+  

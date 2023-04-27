@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+	xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
+	
+	 <http:listener-config name="best-practise-httpListenerConfig">
+        <http:listener-connection host="${http.host}" port="${http.port}" />
+    </http:listener-config>
+    <apikit:config name="best-practise-config" api="best-practise.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <configuration-properties doc:name="Common-Properties" doc:id="1315b747-7501-413f-90e4-6d70be06df83" file="properties/config.yaml" />
+	<configuration-properties doc:name="Env-Properties" doc:id="1dad9729-96bc-4291-946e-ce7cf3e89c68" file="properties/${mule.env}.yaml" />
+	<secure-properties:config name="Secure-Properties-Config" doc:name="Secure Properties Config" doc:id="f1bca4e6-1b52-4196-94a8-c74862cd6df1" file="properties/secure_dev.yaml" key="${mule.key}" >
+		<secure-properties:encrypt algorithm="Blowfish" />
+	</secure-properties:config>
+	<global-property doc:name="Global Property" doc:id="7cf1a4de-bdff-4441-9b5d-40525af9fb66" name="mule.env" value="dev" />
+	<global-property doc:name="Global Property" doc:id="d7bdb8dc-eef9-4b0d-8e69-cef5c1eeb379" name="mule.key" value="1234567891234567" />
+	<import doc:name="common-health-flow" doc:id="a9266154-61a0-4ef4-8011-1eb8fbe1cb7d" file="common-health-flow.xml" />
+	<import doc:name="Common-global-error-handler" doc:id="fd00513d-9ca2-4429-8332-320334ced879" file="global-error-handler.xml" />
+	
+	
+</mule>

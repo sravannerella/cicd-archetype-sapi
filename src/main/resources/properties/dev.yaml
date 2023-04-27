@@ -1,0 +1,4 @@
+object-store:
+  maxEntry: "5"
+  entryTTL: "-1"
+  expirationInterval: "-1"

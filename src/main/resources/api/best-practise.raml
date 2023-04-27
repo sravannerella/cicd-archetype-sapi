@@ -1,0 +1,19 @@
+#%RAML 1.0
+title: openlogix-bestpractise-sapi
+version: v1
+
+/health:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "status" : "running",
+                "time": now(),
+                  "api" : openlogix-bestpractise-sapi" 
+              }
+    
+  post:
+    
