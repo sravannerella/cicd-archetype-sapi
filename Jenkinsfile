@@ -14,7 +14,7 @@
                   {
 
                   // Run Maven on a Unix agent.
-                  sh "mvn clean install -P foo"
+                  sh "mvn clean install "
               }
 
           }
