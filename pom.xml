@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>c1dccc4a-5976-48bb-a0f4-327848ba097b</groupId>
@@ -29,26 +30,26 @@
 				<artifactId>maven-clean-plugin</artifactId>
 				<version>3.2.0</version>
 			</plugin>
-				<plugin>
-		    <groupId>org.mule.tools.maven</groupId>
-		    <artifactId>mule-maven-plugin</artifactId>
-		    <version>${mule.maven.plugin.version}</version>
-		    <extensions>true</extensions>
-		    <configuration>
-            <cloudHubDeployment>
-            <uri>https://anypoint.mulesoft.com</uri>
-            <muleVersion>4.4.0</muleVersion>
-            <username>speriyala2</username>
-            <password>Psmohan@234</password>
-            <environment>Sandbox</environment>
-            <applicationName>cicd-archetype-sapi</applicationName>
-            <businessGroup>c1dccc4a-5976-48bb-a0f4-327848ba097b</businessGroup>
-            <workerType>MICRO</workerType>
-            <workers>1</workers>
-            <objectStoreV2>true</objectStoreV2>
-        </cloudHubDeployment>
-			</configuration>
-		</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>speriyala2</username>
+						<password>Psmohan@234</password>
+						<environment>Sandbox</environment>
+						<applicationName>cicd-archetype-sapi</applicationName>
+						<businessGroup>c1dccc4a-5976-48bb-a0f4-327848ba097b</businessGroup>
+						<workerType>MICRO</workerType>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
@@ -159,6 +160,10 @@
 	</repositories>
 
 	<pluginRepositories>
+		<pluginRepository>
+			<id>mule-public</id>
+			<url>https://repository.mulesoft.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
 		<pluginRepository>
 			<id>mulesoft-releases</id>
 			<name>MuleSoft Releases Repository</name>
