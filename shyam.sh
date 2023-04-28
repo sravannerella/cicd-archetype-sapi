@@ -14,7 +14,7 @@
                   {
 
                   // Run Maven on a Unix agent.
-                  sh "mvn clean install -DaltDeploymentRepository=myinternalrepo::default::file:///C:\Users/ADMIN/.m2/settings.xml"
+                  sh "mvn clean install -DaltDeploymentRepository=myinternalrepo::default::file:///C:/Users/ADMIN/.m2/settings.xml"
               }
 
           }
