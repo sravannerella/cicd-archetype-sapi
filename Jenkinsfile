@@ -11,7 +11,7 @@ pipeline {
             steps {
                 configFileProvider(
                     [configFile(fileId: 'mule-ee')]) {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install -U -X'
                 }
             }
         }
@@ -21,7 +21,6 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
-        
         stage('Deploy') {
             steps {
                 // Run Maven on a Unix agent.
